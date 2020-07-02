@@ -1,12 +1,10 @@
 import express from 'express';
-import routes from './routes';
+import endpoints from './endpoints';
 
 const app = express();
 
-app.use(routes);
-
-app.get('/ping', (req, res) => {
-    res.json('pong');
+app.get('/tools', (req, res) => {
+    res.json(endpoints);
 });
 
 app.listen(3333, () => {
